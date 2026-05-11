@@ -6,12 +6,12 @@
 
       <form @submit.prevent="handleLogin" class="login-form">
         <div class="form-group">
-          <label for="username">Identifiant:</label>
+          <label for="username">Email:</label>
           <input
             id="username"
             v-model="form.username"
-            type="text"
-            placeholder="Entrez votre identifiant"
+            type="email"
+            placeholder="Entrez votre email"
             class="form-input"
             required
           />
@@ -42,22 +42,6 @@
         </div>
       </form>
 
-      <!-- Identifiants par défaut pour le développement -->
-      <div class="default-credentials">
-        <p class="credentials-title">Identifiants par défaut (développement):</p>
-        <div class="credentials-list">
-          <div class="credential-item">
-            <strong>Admin:</strong>
-            <p>Identifiant: <code>admin</code></p>
-            <p>Mot de passe: <code>admin123</code></p>
-          </div>
-          <div class="credential-item">
-            <strong>Manager:</strong>
-            <p>Identifiant: <code>manager</code></p>
-            <p>Mot de passe: <code>manager123</code></p>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </template>
@@ -71,8 +55,8 @@ const router = useRouter()
 const { login, error, loading } = useAuth()
 
 const form = ref({
-  username: 'admin',      // Valeur par défaut
-  password: 'admin123'    // Valeur par défaut
+  username: '',
+  password: ''
 })
 
 const handleLogin = async () => {

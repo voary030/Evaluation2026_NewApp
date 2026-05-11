@@ -26,6 +26,11 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path
       },
+      '/admin850fwun0l1kmrqi5hw6': {
+        target: 'http://localhost/EVAL',
+        changeOrigin: true,
+        rewrite: (path) => path
+      },
       '/img': {
         target: 'http://localhost/EVAL',
         changeOrigin: true,
