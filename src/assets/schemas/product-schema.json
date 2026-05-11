@@ -1,0 +1,571 @@
+{
+  "productSchema": {
+    "required": [
+      "price"
+    ],
+    "recommended": [
+      "id_category_default",
+      "name",
+      "active",
+      "associations.categories"
+    ],
+    "fields": {
+      "identification": {
+        "id_manufacturer": {
+          "type": "number",
+          "format": "isUnsignedId",
+          "required": false,
+          "description": "ID du fabricant"
+        },
+        "id_supplier": {
+          "type": "number",
+          "format": "isUnsignedId",
+          "required": false,
+          "description": "ID du fournisseur"
+        },
+        "id_category_default": {
+          "type": "number",
+          "format": "isUnsignedId",
+          "required": false,
+          "description": "Catégorie par défaut (fortement recommandé)"
+        },
+        "id_tax_rules_group": {
+          "type": "number",
+          "format": "isUnsignedId",
+          "required": false,
+          "description": "Groupe de règles fiscales"
+        },
+        "id_shop_default": {
+          "type": "number",
+          "format": "isUnsignedId",
+          "required": false,
+          "description": "Boutique par défaut"
+        }
+      },
+      "references": {
+        "reference": {
+          "type": "string",
+          "format": "isReference",
+          "maxSize": 64,
+          "required": false,
+          "description": "Référence interne"
+        },
+        "supplier_reference": {
+          "type": "string",
+          "format": "isReference",
+          "maxSize": 64,
+          "required": false,
+          "description": "Référence fournisseur"
+        },
+        "ean13": {
+          "type": "string",
+          "format": "isEan13",
+          "maxSize": 13,
+          "required": false,
+          "description": "Code EAN-13"
+        },
+        "isbn": {
+          "type": "string",
+          "format": "isIsbn",
+          "maxSize": 32,
+          "required": false,
+          "description": "Code ISBN"
+        },
+        "upc": {
+          "type": "string",
+          "format": "isUpc",
+          "maxSize": 12,
+          "required": false,
+          "description": "Code UPC"
+        },
+        "mpn": {
+          "type": "string",
+          "format": "isMpn",
+          "maxSize": 40,
+          "required": false,
+          "description": "Numéro de pièce du fabricant"
+        }
+      },
+      "dimensions": {
+        "width": {
+          "type": "number",
+          "format": "isUnsignedFloat",
+          "required": false,
+          "description": "Largeur"
+        },
+        "height": {
+          "type": "number",
+          "format": "isUnsignedFloat",
+          "required": false,
+          "description": "Hauteur"
+        },
+        "depth": {
+          "type": "number",
+          "format": "isUnsignedFloat",
+          "required": false,
+          "description": "Profondeur"
+        },
+        "weight": {
+          "type": "number",
+          "format": "isUnsignedFloat",
+          "required": false,
+          "description": "Poids"
+        },
+        "location": {
+          "type": "string",
+          "format": "isString",
+          "maxSize": 255,
+          "required": false,
+          "description": "Localisation"
+        }
+      },
+      "pricing": {
+        "price": {
+          "type": "number",
+          "format": "isPrice",
+          "required": true,
+          "description": "Prix du produit ⚠️ OBLIGATOIRE"
+        },
+        "wholesale_price": {
+          "type": "number",
+          "format": "isPrice",
+          "required": false,
+          "description": "Prix de gros"
+        },
+        "ecotax": {
+          "type": "number",
+          "format": "isPrice",
+          "required": false,
+          "description": "Écotaxe"
+        },
+        "additional_shipping_cost": {
+          "type": "number",
+          "format": "isPrice",
+          "required": false,
+          "description": "Frais de port additionnels"
+        },
+        "unit_price": {
+          "type": "number",
+          "format": "isPrice",
+          "required": false,
+          "description": "Prix unitaire"
+        },
+        "unit_price_ratio": {
+          "type": "number",
+          "required": false,
+          "description": "Ratio prix unitaire"
+        }
+      },
+      "stock": {
+        "minimal_quantity": {
+          "type": "number",
+          "format": "isPositiveInt",
+          "required": false,
+          "description": "Quantité minimale"
+        },
+        "low_stock_threshold": {
+          "type": "number",
+          "format": "isInt",
+          "required": false,
+          "description": "Seuil stock faible"
+        },
+        "low_stock_alert": {
+          "type": "boolean",
+          "format": "isBool",
+          "required": false,
+          "description": "Alerte stock faible"
+        },
+        "quantity_discount": {
+          "type": "boolean",
+          "format": "isBool",
+          "required": false,
+          "description": "Remise quantité"
+        },
+        "advanced_stock_management": {
+          "type": "boolean",
+          "format": "isBool",
+          "required": false,
+          "description": "Gestion stock avancée"
+        },
+        "pack_stock_type": {
+          "type": "number",
+          "format": "isUnsignedInt",
+          "required": false,
+          "description": "Type stock pack"
+        }
+      },
+      "customization": {
+        "customizable": {
+          "type": "number",
+          "format": "isUnsignedInt",
+          "required": false,
+          "description": "Personnalisable"
+        },
+        "text_fields": {
+          "type": "number",
+          "format": "isUnsignedInt",
+          "required": false,
+          "description": "Champs texte"
+        },
+        "uploadable_files": {
+          "type": "number",
+          "format": "isUnsignedInt",
+          "required": false,
+          "description": "Fichiers uploadables"
+        }
+      },
+      "status": {
+        "active": {
+          "type": "boolean",
+          "format": "isBool",
+          "required": false,
+          "default": true,
+          "description": "Produit actif"
+        },
+        "new": {
+          "type": "any",
+          "required": false,
+          "description": "Nouveau produit"
+        },
+        "on_sale": {
+          "type": "boolean",
+          "format": "isBool",
+          "required": false,
+          "description": "En solde"
+        },
+        "online_only": {
+          "type": "boolean",
+          "format": "isBool",
+          "required": false,
+          "description": "Vente en ligne uniquement"
+        },
+        "indexed": {
+          "type": "boolean",
+          "format": "isBool",
+          "required": false,
+          "description": "Indexé pour recherche"
+        },
+        "visibility": {
+          "type": "string",
+          "format": "isProductVisibility",
+          "required": false,
+          "enum": ["both", "catalog", "search", "none"],
+          "description": "Visibilité"
+        },
+        "available_for_order": {
+          "type": "boolean",
+          "format": "isBool",
+          "required": false,
+          "description": "Disponible à la commande"
+        },
+        "show_price": {
+          "type": "boolean",
+          "format": "isBool",
+          "required": false,
+          "description": "Afficher le prix"
+        },
+        "show_condition": {
+          "type": "boolean",
+          "format": "isBool",
+          "required": false,
+          "description": "Afficher la condition"
+        },
+        "is_virtual": {
+          "type": "boolean",
+          "format": "isBool",
+          "required": false,
+          "description": "Produit virtuel"
+        }
+      },
+      "content": {
+        "name": {
+          "type": "multiLanguage",
+          "format": "isCatalogName",
+          "maxSize": 128,
+          "required": false,
+          "description": "Nom du produit (multilangue)"
+        },
+        "description": {
+          "type": "multiLanguage",
+          "format": "isCleanHtml",
+          "maxSize": 4194303,
+          "required": false,
+          "description": "Description (multilangue)"
+        },
+        "description_short": {
+          "type": "multiLanguage",
+          "format": "isCleanHtml",
+          "maxSize": 4194303,
+          "required": false,
+          "description": "Description courte (multilangue)"
+        },
+        "meta_title": {
+          "type": "multiLanguage",
+          "format": "isGenericName",
+          "maxSize": 255,
+          "required": false,
+          "description": "Titre meta (multilangue)"
+        },
+        "meta_description": {
+          "type": "multiLanguage",
+          "format": "isGenericName",
+          "maxSize": 512,
+          "required": false,
+          "description": "Description meta (multilangue)"
+        },
+        "meta_keywords": {
+          "type": "multiLanguage",
+          "format": "isGenericName",
+          "maxSize": 255,
+          "required": false,
+          "description": "Mots-clés meta (multilangue)"
+        },
+        "link_rewrite": {
+          "type": "multiLanguage",
+          "format": "isLinkRewrite",
+          "maxSize": 128,
+          "required": false,
+          "description": "Réécriture URL (multilangue)"
+        }
+      },
+      "availability": {
+        "available_date": {
+          "type": "date",
+          "format": "isDateFormat",
+          "required": false,
+          "description": "Date de disponibilité"
+        },
+        "available_now": {
+          "type": "multiLanguage",
+          "format": "isGenericName",
+          "maxSize": 255,
+          "required": false,
+          "description": "Disponible maintenant (multilangue)"
+        },
+        "available_later": {
+          "type": "multiLanguage",
+          "format": "isGenericName",
+          "maxSize": 255,
+          "required": false,
+          "description": "Disponible plus tard (multilangue)"
+        },
+        "delivery_in_stock": {
+          "type": "multiLanguage",
+          "format": "isGenericName",
+          "maxSize": 255,
+          "required": false,
+          "description": "Livraison en stock (multilangue)"
+        },
+        "delivery_out_stock": {
+          "type": "multiLanguage",
+          "format": "isGenericName",
+          "maxSize": 255,
+          "required": false,
+          "description": "Livraison rupture stock (multilangue)"
+        }
+      },
+      "condition": {
+        "condition": {
+          "type": "multiLanguage",
+          "format": "isGenericName",
+          "required": false,
+          "enum": ["new", "used", "refurbished"],
+          "description": "Condition du produit (multilangue)"
+        },
+        "type": {
+          "type": "any",
+          "required": false,
+          "description": "Type de produit"
+        },
+        "product_type": {
+          "type": "multiLanguage",
+          "format": "isGenericName",
+          "required": false,
+          "description": "Type de produit (multilangue)"
+        }
+      },
+      "redirect": {
+        "redirect_type": {
+          "type": "string",
+          "format": "isString",
+          "required": false,
+          "description": "Type de redirection"
+        },
+        "id_type_redirected": {
+          "type": "number",
+          "format": "isUnsignedId",
+          "required": false,
+          "description": "ID redirection vers"
+        }
+      },
+      "delivery": {
+        "state": {
+          "type": "number",
+          "format": "isUnsignedId",
+          "required": false,
+          "description": "État"
+        },
+        "additional_delivery_times": {
+          "type": "number",
+          "format": "isUnsignedId",
+          "required": false,
+          "description": "Délais livraison additionnels"
+        }
+      },
+      "dates": {
+        "date_add": {
+          "type": "date",
+          "format": "isDate",
+          "required": false,
+          "readOnly": true,
+          "description": "Date d'ajout"
+        },
+        "date_upd": {
+          "type": "date",
+          "format": "isDate",
+          "required": false,
+          "readOnly": true,
+          "description": "Date de mise à jour"
+        }
+      }
+    },
+    "associations": {
+      "categories": {
+        "type": "array",
+        "nodeType": "category",
+        "api": "categories",
+        "items": {
+          "id": {
+            "type": "number",
+            "required": true
+          }
+        },
+        "description": "Catégories du produit"
+      },
+      "images": {
+        "type": "array",
+        "nodeType": "image",
+        "api": "images",
+        "items": {
+          "id": {
+            "type": "number",
+            "required": false
+          }
+        },
+        "description": "Images du produit"
+      },
+      "combinations": {
+        "type": "array",
+        "nodeType": "combination",
+        "api": "combinations",
+        "items": {
+          "id": {
+            "type": "number",
+            "required": true
+          }
+        },
+        "description": "Combinaisons du produit"
+      },
+      "product_option_values": {
+        "type": "array",
+        "nodeType": "product_option_value",
+        "api": "product_option_values",
+        "items": {
+          "id": {
+            "type": "number",
+            "required": true
+          }
+        },
+        "description": "Valeurs d'options"
+      },
+      "product_features": {
+        "type": "array",
+        "nodeType": "product_feature",
+        "api": "product_features",
+        "items": {
+          "id": {
+            "type": "number",
+            "required": true
+          },
+          "id_feature_value": {
+            "type": "number",
+            "required": true
+          }
+        },
+        "description": "Caractéristiques du produit"
+      },
+      "tags": {
+        "type": "array",
+        "nodeType": "tag",
+        "api": "tags",
+        "items": {
+          "id": {
+            "type": "number",
+            "required": true
+          }
+        },
+        "description": "Étiquettes"
+      },
+      "stock_availables": {
+        "type": "array",
+        "nodeType": "stock_available",
+        "api": "stock_availables",
+        "items": {
+          "id": {
+            "type": "number",
+            "required": true
+          },
+          "id_product_attribute": {
+            "type": "number",
+            "required": true
+          }
+        },
+        "description": "Stocks disponibles"
+      },
+      "attachments": {
+        "type": "array",
+        "nodeType": "attachment",
+        "api": "attachments",
+        "items": {
+          "id": {
+            "type": "number",
+            "required": true
+          }
+        },
+        "description": "Pièces jointes"
+      },
+      "accessories": {
+        "type": "array",
+        "nodeType": "product",
+        "api": "products",
+        "items": {
+          "id": {
+            "type": "number",
+            "required": true
+          }
+        },
+        "description": "Produits accessoires"
+      },
+      "product_bundle": {
+        "type": "array",
+        "nodeType": "product",
+        "api": "products",
+        "items": {
+          "id": {
+            "type": "number",
+            "required": true
+          },
+          "id_product_attribute": {
+            "type": "number",
+            "required": false
+          },
+          "quantity": {
+            "type": "number",
+            "required": false
+          }
+        },
+        "description": "Bundle produit"
+      }
+    }
+  }
+}

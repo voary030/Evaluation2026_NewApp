@@ -1,0 +1,6 @@
+name,reference,price,quantity,description
+Produit Test 1,TEST-001,29.99,5,Premier produit de test pour l'import en masse
+Produit Test 2,TEST-002,49.99,10,Deuxième produit avec plus de stock
+Produit Test 3,TEST-003,99.99,3,Produit premium avec peu de stock
+Produit Test 4,TEST-004,15.99,20,Produit économique avec beaucoup de stock
+Produit Test 5,TEST-005,59.99,7,Dernier produit de la série de test

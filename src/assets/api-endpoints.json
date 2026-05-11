@@ -1,0 +1,186 @@
+{
+  "api": {
+    "shop": "ITU",
+    "baseUrl": "http://localhost/EVAL/api",
+    "categories": {
+      "products": {
+        "title": "🛍️ Produits & Catalogues",
+        "endpoints": {
+          "products": {
+            "description": "Les produits",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "categories": {
+            "description": "Catégories produits",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "combinations": {
+            "description": "Variantes de produits",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "manufacturers": {
+            "description": "Marques/Fournisseurs",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "suppliers": {
+            "description": "Fournisseurs produits",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "product_features": {
+            "description": "Caractéristiques produits",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "product_options": {
+            "description": "Options produits",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "attachments": {
+            "description": "Fichiers produits",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "tags": {
+            "description": "Tags produits",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "images": {
+            "description": "Images produits",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          }
+        }
+      },
+      "customers": {
+        "title": "👥 Clients & Adresses",
+        "endpoints": {
+          "customers": {
+            "description": "Clients e-shop",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "addresses": {
+            "description": "Adresses clients",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "groups": {
+            "description": "Groupes clients",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "guests": {
+            "description": "Clients invités",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          }
+        }
+      },
+      "orders": {
+        "title": "📋 Commandes",
+        "endpoints": {
+          "orders": {
+            "description": "Commandes clients",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "order_details": {
+            "description": "Détails commandes",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "order_invoices": {
+            "description": "Factures",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "order_slip": {
+            "description": "Avoirs",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "order_histories": {
+            "description": "Historique commandes",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "order_payments": {
+            "description": "Paiements commandes",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "order_states": {
+            "description": "États commandes",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "order_carriers": {
+            "description": "Transporteurs",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          }
+        }
+      },
+      "cart": {
+        "title": "🛒 Panier & Règles",
+        "endpoints": {
+          "carts": {
+            "description": "Paniers clients",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "cart_rules": {
+            "description": "Règles panier",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "order_cart_rules": {
+            "description": "Règles appliquées",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          }
+        }
+      },
+      "stocks": {
+        "title": "💰 Prix & Stocks",
+        "endpoints": {
+          "stocks": {
+            "description": "Stocks",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "stock_availables": {
+            "description": "Quantités disponibles",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "stock_movements": {
+            "description": "Mouvements stock",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "specific_prices": {
+            "description": "Prix spécifiques",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "price_ranges": {
+            "description": "Paliers prix",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          }
+        }
+      },
+      "configuration": {
+        "title": "🌍 Configuration & Localisation",
+        "endpoints": {
+          "configurations": {
+            "description": "Configuration shop",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "countries": {
+            "description": "Pays",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "states": {
+            "description": "États/Régions",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "zones": {
+            "description": "Zones géographiques",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "currencies": {
+            "description": "Devises",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "languages": {
+            "description": "Langues",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          },
+          "carriers": {
+            "description": "Transporteurs",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+          }
+        }
+      }
+    }
+  }
+}
