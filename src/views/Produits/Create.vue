@@ -6,7 +6,7 @@
         <h1>{{ isEditMode ? 'Modifier le produit' : 'Créer un produit' }}</h1>
         <p class="subtitle">Remplissez les informations du produit ci-dessous</p>
       </div>
-      <router-link to="/produits" class="btn-back">
+      <router-link to="/backoffice/produits" class="btn-back">
         <span>←</span> Retour à la liste
       </router-link>
     </div>
@@ -362,7 +362,7 @@ const handleSubmit = async () => {
   if (result && !isEditMode) {
     // Redirection vers la liste après création réussie
     setTimeout(() => {
-      router.push('/produits')
+      router.push('/backoffice/produits')
     }, 1500)
   }
 }

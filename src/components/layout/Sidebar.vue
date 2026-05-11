@@ -10,37 +10,51 @@
             🏠 Accueil
           </router-link>
         </li>
-        <li>
-          <router-link to="/produits" exact-active-class="active">
-            🛍️ Produits
+        <li class="backoffice-link">
+          <router-link :to="isAuthenticated ? '/backoffice' : '/backoffice/login'" exact-active-class="active">
+            🔐 Backoffice
           </router-link>
         </li>
-        <li>
-          <router-link to="/categories" exact-active-class="active">
-            📁 Catégories
-          </router-link>
-        </li>
-        <li>
-          <router-link to="/import" exact-active-class="active">
-            ⬇️ Importer
-          </router-link>
-        </li>
-        <li>
-          <router-link to="/api-explorer" exact-active-class="active">
-            🔍 API Explorer
-          </router-link>
-        </li>
-        <li>
-          <router-link to="/reset" exact-active-class="active" class="danger">
-            ⚠️ Réinitialiser
-          </router-link>
-        </li>
+
+        <!-- Pages du backoffice (visibles uniquement si authentifié) -->
+        <template v-if="isAuthenticated">
+          <li class="nav-divider"></li>
+          <li>
+            <router-link to="/backoffice/produits" exact-active-class="active">
+              📦 Produits
+            </router-link>
+          </li>
+          <li>
+            <router-link to="/backoffice/categories" exact-active-class="active">
+              📁 Catégories
+            </router-link>
+          </li>
+          <li>
+            <router-link to="/backoffice/import" exact-active-class="active">
+              📥 Importer
+            </router-link>
+          </li>
+          <li>
+            <router-link to="/backoffice/reset" exact-active-class="active" class="danger">
+              🔄 Réinitialiser
+            </router-link>
+          </li>
+          <li>
+            <router-link to="/backoffice/api-explorer" exact-active-class="active">
+              🔍 API Explorer
+            </router-link>
+          </li>
+        </template>
       </ul>
     </nav>
   </aside>
 </template>
 
 <script setup>
+import { AuthService } from '@/services/AuthService'
+import { computed } from 'vue'
+
+const isAuthenticated = computed(() => AuthService.isAuthenticated())
 </script>
 
 <style scoped>
@@ -113,5 +127,24 @@
 .sidebar-nav a.danger.active {
   background-color: #c0392b;
   border-left: 4px solid #a53125;
+}
+
+.backoffice-link a {
+  background-color: #e74c3c !important;
+  color: white !important;
+  border-top: 2px solid #c0392b;
+  border-bottom: 2px solid #c0392b;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.backoffice-link a:hover {
+  background-color: #c0392b !important;
+}
+
+.nav-divider {
+  height: 1px;
+  background-color: #34495e;
+  margin: 10px 0;
 }
 </style>

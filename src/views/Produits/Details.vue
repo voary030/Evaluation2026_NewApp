@@ -1,7 +1,7 @@
 <template>
   <div class="product-details">
     <div class="page-header">
-      <router-link class="back-link" to="/produits">← Retour aux produits</router-link>
+      <router-link class="back-link" to="/backoffice/produits">← Retour aux produits</router-link>
       <div class="header-main">
         <div>
           <h1>🧾 {{ product?.name || 'Produit' }}</h1>

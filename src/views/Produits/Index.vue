@@ -25,7 +25,7 @@
         {{ loading ? '⏳ Chargement...' : '🔄 Recharger' }}
       </button>
       <router-link
-        to="/produits/create"
+        to="/backoffice/produits/create"
         style="display: inline-block; padding: 10px 20px; margin-left: 10px; background-color: #4caf50; color: white; text-decoration: none; border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: 600;"
       >
         ➕ Créer un produit
@@ -71,7 +71,7 @@
             </td>
             <td style="border: 1px solid #ddd; padding: 12px; font-weight: 500;">
               <router-link
-                :to="`/produits/${product.id}`"
+                :to="`/backoffice/produits/${product.id}`"
                 style="color: #1976d2; text-decoration: none; font-weight: 600;"
               >
                 {{ product.name }}
@@ -119,13 +119,13 @@
             </td>
             <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">
               <router-link
-                :to="`/produits/${product.id}`"
+                :to="`/backoffice/produits/${product.id}`"
                 style="display: inline-block; padding: 6px 12px; background-color: #1976d2; color: white; border: none; border-radius: 3px; cursor: pointer; font-size: 12px; text-decoration: none; margin-right: 6px;"
               >
                 👁️ Voir
               </router-link>
               <router-link
-                :to="`/produits/${product.id}/edit`"
+                :to="`/backoffice/produits/${product.id}/edit`"
                 style="display: inline-block; padding: 6px 12px; background-color: #ff9800; color: white; border: none; border-radius: 3px; cursor: pointer; font-size: 12px; text-decoration: none; margin-right: 6px;"
               >
                 ✏️ Éditer

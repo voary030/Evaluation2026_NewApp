@@ -1,16 +1,36 @@
 <template>
-  <div id="app" class="app-container">
-    <Sidebar />
-    <div class="main-content">
+  <div id="app">
+    <!-- Layout minimal pour la page de login du backoffice -->
+    <template v-if="route.meta.layout === 'minimal'">
       <router-view class="page-content" />
-      <Footer />
-    </div>
+    </template>
+
+    <!-- Layout standard pour le backoffice authentifié -->
+    <template v-else-if="isBackofficeRoute && isAuthenticated">
+      <BackofficeLayout>
+        <router-view class="page-content" />
+      </BackofficeLayout>
+    </template>
+
+    <!-- Layout frontoffice pour les pages publiques -->
+    <template v-else>
+      <FrontofficeLayout>
+        <router-view class="page-content" />
+      </FrontofficeLayout>
+    </template>
   </div>
 </template>
 
 <script setup>
-import Sidebar from './components/layout/Sidebar.vue'
-import Footer from './components/layout/Footer.vue'
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+import FrontofficeLayout from './components/layout/FrontofficeLayout.vue'
+import BackofficeLayout from './components/layout/BackofficeLayout.vue'
+import { AuthService } from './services/AuthService'
+
+const route = useRoute()
+const isAuthenticated = computed(() => AuthService.isAuthenticated())
+const isBackofficeRoute = computed(() => route.path.startsWith('/backoffice'))
 </script>
 
 <style>
@@ -22,21 +42,12 @@ body {
   color: #333;
 }
 
-.app-container {
-  display: flex;
-  min-height: 100vh;
-}
-
-.main-content {
-  flex: 1;
-  margin-left: 250px; /* Largeur de la sidebar */
-  display: flex;
-  flex-direction: column;
+#app {
+  width: 100%;
   min-height: 100vh;
 }
 
 .page-content {
   flex: 1;
-  padding: 30px;
 }
 </style>
