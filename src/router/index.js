@@ -98,20 +98,19 @@ const router = createRouter({
 })
 
 // Guard de protection des routes - Authentification
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, from) => {
   // Vérifier si la route nécessite une authentification
   const requiresAuth = to.meta.requiresAuth
   const isAuthenticated = AuthService.isAuthenticated()
 
   if (requiresAuth && !isAuthenticated) {
     // Rediriger vers la page de login si non authentifié
-    next({ name: 'backoffice-login' })
+    return { name: 'backoffice-login' }
   } else if (to.name === 'backoffice-login' && isAuthenticated) {
     // Si l'utilisateur est déjà connecté et essaie d'accéder à login, le rediriger au dashboard
-    next({ name: 'backoffice-dashboard' })
-  } else {
-    next()
+    return { name: 'backoffice-dashboard' }
   }
+  // Sinon, continuer la navigation
 })
 
 // Mise à jour du titre de la page

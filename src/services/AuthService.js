@@ -144,7 +144,7 @@ export class AuthService {
   static async validateWebservice() {
     try {
       const [permissionsResponse, employeeResponse] = await Promise.all([
-        apiClient.get(''),
+        apiClient.get('products?limit=1'),
         apiClient.get('employees?display=full&limit=1')
       ])
 

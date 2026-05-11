@@ -1,0 +1,6 @@
+date_availability_produit,nom,reference,prix_ttc,Taxe,categorie,prix_achat
+2026-01-01,T-Shirt Blanc,T_01,29.99,20,Vêtements,10.00
+2026-01-02,T-Shirt Noir,T_02,29.99,20,Vêtements,10.00
+2026-01-03,Pantalon Bleu,P_01,59.99,20,Vêtements,25.00
+2026-01-04,Chaussettes,C_01,9.99,20,Vêtements,2.50
+2026-01-05,Mug Café,M_01,12.99,20,Accessoires,3.50
