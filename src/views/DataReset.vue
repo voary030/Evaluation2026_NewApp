@@ -62,7 +62,7 @@
           <div class="step-info">
             <p v-if="step.deleted !== undefined">✅ Supprimé: {{ step.deleted }} produit(s)</p>
             <p v-if="step.failed">❌ Erreurs: {{ step.failed }} produit(s)</p>
-            <p v-if="step.errors && step.errors.length > 0" class="error-details">
+            <div v-if="step.errors && step.errors.length > 0" class="error-details">
               <strong>Détails des erreurs:</strong>
               <ul>
                 <li v-for="(err, idx) in step.errors.slice(0, 5)" :key="idx">
@@ -70,7 +70,7 @@
                 </li>
                 <li v-if="step.errors.length > 5">... et {{ step.errors.length - 5 }} autre(s)</li>
               </ul>
-            </p>
+            </div>
           </div>
         </div>
       </div>
